@@ -68,9 +68,11 @@
         </g:if>
         <input type="text" class="form-control" name="j_username"  id='username' placeholder="${message(code: 'springSecurity.login.username.label')}" required autofocus>
         <input type="password" class="form-control" placeholder="${message(code: 'springSecurity.login.password.label')}" required name='j_password' id='password'>
-        <label class="checkbox">
+        <div  class="checkbox">
+        <label>
             <input type='checkbox'  name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/> <g:message code="springSecurity.login.remember.me.label"/>
         </label>
+        </div>
         <input type='submit' id="submit"  class="btn btn-lg btn-primary btn-block" value='${message(code: "springSecurity.login.button")}'/>
     </form>
 
