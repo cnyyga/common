@@ -2,10 +2,10 @@ package com.wll
 
 class Feedback {
 
-    String appId//产品id
+    Product product//产品id
     String ver  //版本
     String content //反馈信息
-    boolean status //0false=未处理，1true已经处理
+    boolean status = false //0false=未处理，1true已经处理
     String devId //设备id
     Date dateCreated
     String dev //iphone,ipad,android,winphone
@@ -13,6 +13,15 @@ class Feedback {
     String pushMessage
 
     static constraints = {
+        content()
+        product()
+        dateCreated()
+        ver()
+        dev()
+        devId()
+        pushMessage(nullable: true)
+        updateDate(nullable: true)
+        status()
     }
 
     static mapping = {

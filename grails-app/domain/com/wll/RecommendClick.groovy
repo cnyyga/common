@@ -1,18 +1,23 @@
 package com.wll
 
-class PushToken {
+/**
+ * 推荐应用点击记录。
+ *
+ */
+class RecommendClick {
 
-    String appId//产品id
-    String token  //push 用户token
-    String channelId
+    Recommend recommend //
+    Product product
     String devId   //设备id
     String ver  //版本
     String dev //iphone ,ipad,android,winphone
 
     Date dateCreated
-    Date lastUpdated
-    Short status = 0 //未发送 ，1发送
 
     static constraints = {
+    }
+
+    static mapping = {
+        version(false)
     }
 }

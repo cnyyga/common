@@ -14,6 +14,12 @@ class UserController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        def a ="abcde"
+        println(a)
+        def aa = WllUtils.aesEncrypt(a)
+        println(aa)
+        def b = WllUtils.aesDecrypt(aa)
+        println(b)
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
@@ -32,6 +38,8 @@ class UserController {
             notFound()
             return
         }
+
+        User.findByIdGreaterThanEqualsAndIdLessThanEquals()
 
         if (userInstance.hasErrors()) {
             respond userInstance.errors, view:'create'
